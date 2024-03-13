@@ -1,24 +1,26 @@
-package com.codurance.training.tasks;
+package com.codurance.training.tasks.UseCase.Command;
+
+import com.codurance.training.tasks.Entity.Task;
 
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 
-public class Check implements Action {
-    private String _commandLine;
-    private final Map<String, List<Task>> _tasks;
-    private final BufferedReader _in;
-    private final PrintWriter _out;
-    Check(String commandLine, Map<String, List<Task>> tasks, BufferedReader in, PrintWriter out) {
-        this._commandLine = commandLine;
+public class CheckAction implements Action {
+    private Map<String, List<Task>> _tasks;
+    private BufferedReader _in;
+    private PrintWriter _out;
+
+    CheckAction(Map<String, List<Task>> tasks, BufferedReader in, PrintWriter out) {
         _tasks = tasks;
         _in = in;
         _out = out;
     }
-    public void execute() {
-        setDone(_commandLine, true);
+    public void excute(String commandLine) {
+        setDone(commandLine, true);
     }
+
     private void setDone(String idString, boolean done) {
         int id = Integer.parseInt(idString);
         for (Map.Entry<String, List<Task>> project : _tasks.entrySet()) {

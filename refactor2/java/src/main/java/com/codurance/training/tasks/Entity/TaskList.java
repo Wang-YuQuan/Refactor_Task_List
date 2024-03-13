@@ -1,4 +1,7 @@
-package com.codurance.training.tasks;
+package com.codurance.training.tasks.Entity;
+
+import com.codurance.training.tasks.UseCase.Command.Action;
+import com.codurance.training.tasks.UseCase.Command.ActionFactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,12 +14,10 @@ import java.util.Map;
 
 public final class TaskList implements Runnable {
     private static final String QUIT = "quit";
-
     private final Map<String, List<Task>> tasks = new LinkedHashMap<>();
     private final BufferedReader in;
     private final PrintWriter out;
-
-    private long lastId = 0;
+    private ActionFactory _actionFactory;
 
     public static void main(String[] args) throws Exception {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -27,6 +28,7 @@ public final class TaskList implements Runnable {
     public TaskList(BufferedReader reader, PrintWriter writer) {
         this.in = reader;
         this.out = writer;
+        this._actionFactory = new ActionFactory(tasks, in, out);
     }
 
     public void run() {
@@ -47,25 +49,7 @@ public final class TaskList implements Runnable {
     }
 
     private void execute(String commandLine) {
-        String[] commandRest = commandLine.split(" ", 2);
-        Action action = createAction(commandRest[0], commandRest[1]);
-        action.execute();
-    }
-
-    private Action createAction(String firstCommandLine, String lastCommandLine) {
-        switch (firstCommandLine) {
-            case "show":
-                return new Show(firstCommandLine, tasks, in, out);
-            case "add":
-                return new Add(lastCommandLine, tasks, in, out);
-            case "check":
-                return new Check(lastCommandLine, tasks, in, out);
-            case "uncheck":
-                return new UnCheck(lastCommandLine, tasks, in, out);
-            case "help":
-                return new Help(firstCommandLine, tasks, in, out);
-            default:
-                return new Error(firstCommandLine, tasks, in, out);
-        }
+        Action action = _actionFactory.CreateAction(commandLine);
+        action.excute(commandLine);
     }
 }

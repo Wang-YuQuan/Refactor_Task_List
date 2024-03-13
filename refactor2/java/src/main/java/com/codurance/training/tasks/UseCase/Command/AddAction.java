@@ -1,25 +1,27 @@
-package com.codurance.training.tasks;
+package com.codurance.training.tasks.UseCase.Command;
+
+import com.codurance.training.tasks.Entity.Task;
 
 import java.io.BufferedReader;
-import java.util.ArrayList;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class Add implements Action {
-    private String _commandLine;
-    private final Map<String, List<Task>> _tasks;
-    private final BufferedReader _in;
-    private final PrintWriter _out;
-    private long lastId = 0;
-    Add(String commandLine, Map<String, List<Task>> tasks, BufferedReader in, PrintWriter out) {
-        this._commandLine = commandLine;
+public class AddAction implements Action {
+    private Map<String, List<Task>> _tasks;
+    private BufferedReader _in;
+    private PrintWriter _out;
+    private long _lastId;
+
+    AddAction(Map<String, List<Task>> tasks, BufferedReader in, PrintWriter out) {
         _tasks = tasks;
         _in = in;
         _out = out;
+        _lastId = 0;
     }
-    public void execute() {
-        String[] subcommandRest = _commandLine.split(" ", 2);
+    public void excute(String commandLine) {
+        String[] subcommandRest = commandLine.split(" ", 2);
         String subcommand = subcommandRest[0];
         if (subcommand.equals("project")) {
             addProject(subcommandRest[1]);
@@ -28,9 +30,11 @@ public class Add implements Action {
             addTask(projectTask[0], projectTask[1]);
         }
     }
+
     private void addProject(String name) {
         _tasks.put(name, new ArrayList<Task>());
     }
+
     private void addTask(String project, String description) {
         List<Task> projectTasks = _tasks.get(project);
         if (projectTasks == null) {
@@ -40,7 +44,8 @@ public class Add implements Action {
         }
         projectTasks.add(new Task(nextId(), description, false));
     }
+
     private long nextId() {
-        return ++lastId;
+        return ++_lastId;
     }
 }

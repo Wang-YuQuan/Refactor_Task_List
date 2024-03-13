@@ -1,22 +1,23 @@
-package com.codurance.training.tasks;
+package com.codurance.training.tasks.UseCase.Command;
+
+import com.codurance.training.tasks.Entity.Task;
 
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 
-public class Help implements Action {
-    private String _commandLine;
-    private final Map<String, List<Task>> _tasks;
-    private final BufferedReader _in;
-    private final PrintWriter _out;
-    Help(String commandLine, Map<String, List<Task>> tasks, BufferedReader in, PrintWriter out) {
-        this._commandLine = commandLine;
+public class HelpAction implements Action {
+    private Map<String, List<Task>> _tasks;
+    private BufferedReader _in;
+    private PrintWriter _out;
+
+    HelpAction(Map<String, List<Task>> tasks, BufferedReader in, PrintWriter out) {
         _tasks = tasks;
         _in = in;
         _out = out;
     }
-    public void execute() {
+    public void excute(String commandLine) {
         _out.println("Commands:");
         _out.println("  show");
         _out.println("  add project <project name>");
