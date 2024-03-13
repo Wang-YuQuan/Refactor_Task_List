@@ -21,6 +21,7 @@ public class AddAction implements Action {
         _lastId = 0;
     }
     public void excute(String commandLine) {
+        commandLine = commandLine.split(" ", 2)[1];
         String[] subcommandRest = commandLine.split(" ", 2);
         String subcommand = subcommandRest[0];
         if (subcommand.equals("project")) {

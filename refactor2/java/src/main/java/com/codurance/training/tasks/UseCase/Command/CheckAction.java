@@ -18,6 +18,7 @@ public class CheckAction implements Action {
         _out = out;
     }
     public void excute(String commandLine) {
+        commandLine = commandLine.split(" ", 2)[1];
         setDone(commandLine, true);
     }
 

@@ -18,6 +18,7 @@ public class ErrorAction implements Action {
         _out = out;
     }
     public void excute(String commandLine) {
+        commandLine = commandLine.split(" ", 2)[0];
         _out.printf("I don't know what the command \"%s\" is.", commandLine);
         _out.println();
     }
