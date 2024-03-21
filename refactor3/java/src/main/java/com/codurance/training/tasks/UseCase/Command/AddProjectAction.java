@@ -10,7 +10,7 @@ public class AddProjectAction implements Action {
     }
 
     public String excute(String commandLine) {
-        String projectName = commandLine.split(" ", 2)[1];
+        String projectName = commandLine.split(" ", 3)[2];
         Projects projects = Projects.instance();
         Project project = projects.getProject(projectName);
         if(project == null) {
