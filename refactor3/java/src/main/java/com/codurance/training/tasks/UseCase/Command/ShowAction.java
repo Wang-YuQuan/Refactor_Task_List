@@ -15,11 +15,11 @@ public class ShowAction implements Action {
         Projects projects = Projects.instance();
         ArrayList<Project> projectList = projects.getAllProject();
         for (Project project : projectList) {
-            msg += project.getProjectName() + "\n";
+            msg += project.getProjectName() + "\r\n";
             for (Task task : project.getTasks()) {
                 msg += String.format("    [%c] %d: %s%n", (task.isDone() ? 'x' : ' '), task.getId(), task.getDescription());
             }
-            msg += "\n";
+            msg += "\r\n";
         }
         return msg;
     }

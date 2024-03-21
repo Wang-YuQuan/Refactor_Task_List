@@ -63,10 +63,10 @@ public final class ApplicationTest {
 
         execute("show");
         readLines(
-            "secrets",
-            "    [ ] 1: Eat more donuts.",
-            "    [ ] 2: Destroy all humans.",
-            ""
+                "secrets",
+                "    [ ] 1: Eat more donuts.",
+                "    [ ] 2: Destroy all humans.",
+                ""
         );
 
         execute("add project training");
@@ -96,6 +96,33 @@ public final class ApplicationTest {
                 "    [ ] 7: Outside-In TDD",
                 "    [ ] 8: Interaction-Driven Design",
                 ""
+        );
+
+        // Added by Teddy to verify error handling messages
+        execute("add task DDD learn CA.");
+        readLines(
+                "Could not find a project with the name \"DDD\"."
+        );
+
+        execute("check 99");
+        readLines(
+                "Could not find a task with an ID of 99."
+        );
+
+        execute("help");
+        readLines(
+                "Commands:",
+                "  show",
+                "  add project <project name>",
+                "  add task <project name> <task description>",
+                "  check <task ID>",
+                "  uncheck <task ID>",
+                ""
+        );
+
+        execute("not-a-command");
+        readLines(
+                "I don't know what the command \"not-a-command\" is."
         );
 
         execute("quit");

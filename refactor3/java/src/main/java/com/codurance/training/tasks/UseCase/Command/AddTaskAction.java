@@ -10,16 +10,16 @@ public class AddTaskAction implements Action {
         this.msg = "";
     }
     public String excute(String commandLine) {
-        String projectName = commandLine.split(" ", 3)[1];
-        String description = commandLine.split(" ", 3)[2];
+        String projectName = commandLine.split(" ", 4)[2];
+        String description = commandLine.split(" ", 4)[3];
         Projects projects = Projects.instance();
         Project project = projects.getProject(projectName);
         if (project == null) {
             msg += String.format("Could not find a project with the name \"%s\".", projectName);
-            msg += "\n";
+            msg += "\r\n";
             return msg;
         }
-        project.Add(new Task(project.getTaskLength(), description, false));
+        project.Add(new Task(projects.getNextID()+1, description, false));
         return msg;
     }
 }

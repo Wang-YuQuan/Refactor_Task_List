@@ -14,13 +14,13 @@ public class HelpAction implements Action {
         this.msg = "";
     }
     public String excute(String commandLine) {
-        msg += "Commands:\n";
-        msg += "  show\n";
-        msg += "  add project <project name>\n";
-        msg += "  add task <project name> <task description>\n";
-        msg += "  check <task ID>\n";
-        msg += "  uncheck <task ID>\n";
-        msg += "\n";
+        msg += "Commands:\r\n";
+        msg += "  show\r\n";
+        msg += "  add project <project name>\r\n";
+        msg += "  add task <project name> <task description>\r\n";
+        msg += "  check <task ID>\r\n";
+        msg += "  uncheck <task ID>\r\n";
+        msg += "\r\n";
         return msg;
     }
 }

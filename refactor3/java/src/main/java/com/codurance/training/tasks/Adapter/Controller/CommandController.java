@@ -18,7 +18,7 @@ public class CommandController {
             case "show":
                 return new ShowAction();
             case "add":
-                if(command.split(" " ,2)[0] == "project") {
+                if((commandLine.split(" ", 3)[1]).equals("project")) {
                     return new AddProjectAction();
                 }
                 else {

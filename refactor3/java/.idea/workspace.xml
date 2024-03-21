@@ -6,7 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="eef277e1-d6af-4a98-993e-92aa75b1c6f1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/AddProjectAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/AddProjectAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/Adapter/Controller/CommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/Adapter/Controller/CommandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/Entity/Projects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/Entity/Projects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/AddTaskAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/AddTaskAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/CheckAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/CheckAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/ErrorAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/ErrorAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/HelpAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/HelpAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/ShowAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/ShowAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/UnCheckAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/UnCheckAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/codurance/training/tasks/ApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codurance/training/tasks/ApplicationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +68,20 @@
       <recent name="com.codurance.training.tasks.Adapter.Presenter" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ApplicationTest">
+    <configuration name="TaskListApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.codurance.training.tasks.TaskListApp" />
+      <module name="tasks" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.codurance.training.tasks.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tasks" />
       <extension name="coverage">
@@ -79,6 +100,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ApplicationTest" />
+        <item itemvalue="Application.TaskListApp" />
       </list>
     </recent_temporary>
   </component>

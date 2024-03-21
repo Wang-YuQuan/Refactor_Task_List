@@ -9,7 +9,7 @@ public class ErrorAction implements Action {
     public String excute(String commandLine) {
         String command = commandLine.split(" ", 2)[0];
         msg += String.format("I don't know what the command \"%s\" is.", command);
-        msg += "\n";
+        msg += "\r\n";
         return msg;
     }
 }

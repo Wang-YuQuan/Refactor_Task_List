@@ -24,11 +24,19 @@ public class Projects {
 
     public Project getProject(String projectName) {
         for(Project project : projects) {
-            if(project.getProjectName() == projectName) {
+            if(project.getProjectName().equals(projectName)) {
                 return project;
             }
         }
         return null;
+    }
+
+    public int getNextID() {
+        int result = 0;
+        for(Project project : projects) {
+            result += project.getTaskLength();
+        }
+        return result;
     }
 
     public void addProject(String projectName) {
