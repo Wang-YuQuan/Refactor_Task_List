@@ -1,6 +1,7 @@
 package com.codurance.training.tasks;
 
 import com.codurance.training.tasks.Adapter.Controller.CommandController;
+import com.codurance.training.tasks.Adapter.Presenter.TaskListConsole;
 import com.codurance.training.tasks.Entity.Task;
 
 import java.io.BufferedReader;
@@ -49,6 +50,7 @@ public final class TaskListApp implements Runnable {
     }
 
     private void execute(String commandLine) {
-        out.print(commandController.excute(commandLine));
+        TaskListConsole taskListConsole = new TaskListConsole(this.in, this.out);
+        taskListConsole.getView(commandController.excute(commandLine));
     }
 }

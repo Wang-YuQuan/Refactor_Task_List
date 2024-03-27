@@ -8,12 +8,12 @@ import java.util.List;
 import java.util.Map;
 
 public class HelpAction implements Action {
-    private String msg;
-
     public HelpAction() {
-        this.msg = "";
+
     }
-    public String excute(String commandLine) {
+
+    public String excute(String[] commandLine) {
+        String msg = "";
         msg += "Commands:\r\n";
         msg += "  show\r\n";
         msg += "  add project <project name>\r\n";

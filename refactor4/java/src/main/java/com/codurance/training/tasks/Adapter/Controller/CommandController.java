@@ -7,32 +7,15 @@ public class CommandController {
 
     }
     public String excute(String commandLine) {
-        Action action = CreateAction(commandLine);
-        return action.excute(commandLine);
-    }
-
-    public Action CreateAction(String commandLine) {
-        String[] commandRest = commandLine.split(" ", 2);
-        String command = commandRest[0];
-        switch(command) {
-            case "show":
-                return new ShowAction();
-            case "add":
-                if((commandLine.split(" ", 3)[1]).equals("project")) {
-                    return new AddProjectAction();
-                }
-                else {
-                    return new AddTaskAction();
-                }
-            case "check":
-                return new CheckAction();
-            case "uncheck":
-                return new UnCheckAction();
-            case "help":
-                return new HelpAction();
-            default:
-
-                return new ErrorAction();
+        String[] commandRest = commandLine.split(" ", 3);
+        String[] splitRest = commandLine.split(" ");
+        String firstCommand = commandRest[0];
+        String secondCommand = "";
+        if(firstCommand.equals("add")) {
+            secondCommand = commandRest[1];
         }
+        ActionFactory actionFactory = new ActionFactory();
+        Action action = actionFactory.createAction(firstCommand, secondCommand);
+        return action.excute(splitRest);
     }
 }

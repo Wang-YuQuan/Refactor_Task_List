@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eef277e1-d6af-4a98-993e-92aa75b1c6f1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../refactor3/java/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../refactor3/java/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/ActionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/Adapter/Controller/CommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/Adapter/Controller/CommandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/Adapter/Presenter/TaskListConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/Adapter/Presenter/TaskListConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/TaskListApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/TaskListApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/AddProjectAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/AddProjectAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/AddTaskAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/AddTaskAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/CheckAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/CheckAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/ErrorAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/ErrorAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/HelpAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/HelpAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/ShowAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/ShowAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/UnCheckAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/UseCase/Command/UnCheckAction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

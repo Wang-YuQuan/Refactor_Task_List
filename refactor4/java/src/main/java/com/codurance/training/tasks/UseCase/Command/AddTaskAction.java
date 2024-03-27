@@ -4,15 +4,23 @@ import com.codurance.training.tasks.Entity.Project;
 import com.codurance.training.tasks.Entity.Projects;
 import com.codurance.training.tasks.Entity.Task;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class AddTaskAction implements Action {
-    private String msg;
     public AddTaskAction() {
-        this.msg = "";
+
     }
 
-    public String excute(String commandLine) {
-        String projectName = commandLine.split(" ", 4)[2];
-        String description = commandLine.split(" ", 4)[3];
+    public String excute(String[] commandLine) {
+        String msg = "";
+        List<String> cmd = new ArrayList<String>(Arrays.asList(commandLine));
+        String projectName = cmd.get(2);
+        cmd.remove("add");
+        cmd.remove("task");
+        cmd.remove(0);
+        String description = String.join(" ", cmd);
         Projects projects = Projects.instance();
         int addTaskResult = projects.addTask(projectName, description);
         if (addTaskResult == -1) {

@@ -8,18 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CheckAction implements Action {
-    private String msg;
     public CheckAction() {
-        this.msg = "";
+
     }
 
-    public String excute(String commandLine) {
-        String taskId = commandLine.split(" ", 2)[1];
-        setDone(taskId, true);
+    public String excute(String[] commandLine) {
+        String msg = "";
+        String taskId = commandLine[1];
+        msg += setDone(taskId, true);
         return msg;
     }
 
-    private void setDone(String idString, boolean done) {
+    private String setDone(String idString, boolean done) {
+        String msg = "";
         int id = Integer.parseInt(idString);
         Projects projects = Projects.instance();
         List<Project> projectList = projects.getAllProject();
@@ -27,11 +28,12 @@ public class CheckAction implements Action {
             for (Task task : project.getTasks()) {
                 if (task.getId() == id) {
                     task.setDone(done);
-                    return;
+                    return msg;
                 }
             }
         }
         msg += String.format("Could not find a task with an ID of %d.", id);
         msg += "\r\n";
+        return msg;
     }
 }

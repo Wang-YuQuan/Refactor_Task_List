@@ -8,11 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShowAction implements Action {
-    private String msg;
     public ShowAction() {
-        this.msg = "";
+
     }
-    public String excute(String commandLine) {
+
+    public String excute(String[] commandLine) {
+        String msg = "";
         Projects projects = Projects.instance();
         List<Project> projectList = projects.getAllProject();
         for (Project project : projectList) {
